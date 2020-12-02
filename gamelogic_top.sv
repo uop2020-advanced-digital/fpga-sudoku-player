@@ -58,8 +58,10 @@ module gamelogic_top(
         .display_grid(display_grid)
     );
 
+    assign pre_selector_board = display_grid;
+
     // Check if board has been successfully solved
-    //              To be implemented soon      //
+    //         To be implemented soon           //
 
 
 endmodule
