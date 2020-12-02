@@ -1,0 +1,14 @@
+# folders
+db/
+incremental_db/
+output_files/
+simulation/
+work/
+
+# Quartus files
+*.qsf
+*.ini
+*.wlf
+*.sqf
+
+*.bak
