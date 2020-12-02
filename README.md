@@ -6,7 +6,7 @@ A sudoku player implemented on an Intel Cyclone FPGA board. Sudoku inputs are re
 
 This submodule is used to control the game logic. This portion consists of initializing the sudoku game board, resetting / changing the sudoku game, accepting the keyboard input, and traversing through the game board to input the user value.
 
-# Parameters and Usage of Sub-Module
+### Parameters and Usage of Sub-Module
 
 - `board_enable`: map to an input switch to enable which game board selection. In order to have values displayed, this switch must go high.
 
