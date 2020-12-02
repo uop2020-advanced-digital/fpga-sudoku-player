@@ -33,7 +33,7 @@ module test_gamelogic_top();
         key_input <= in_key_input;
         user_value <= user_value;
 
-        @(posedge clock)
+        @(posedge clock);
 
     endtask
 
@@ -42,7 +42,7 @@ module test_gamelogic_top();
     begin
         $display("Starting writing test");
         $display("Test Complete.");
-        testGame(1, 1)
+        testGame(1, 1);
         #25 $stop;
     end
 

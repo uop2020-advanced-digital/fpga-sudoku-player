@@ -2,21 +2,20 @@ import screen::*;
 module display_controller(
 	(* chip_pin = "AG15" *)  input logic clk,
 	
-	(* chip_pin = "AD27, AC27, AC28, AB28" *) input logic [3:0] num_select,
-	(* chip_pin = "N21" *) input logic cursor_down,
-	(* chip_pin = "M21" *) input logic cursor_right,
+	input logic cursor_down,
+	input logic cursor_right,
 	
 	input logic [3:0] display_grid [8:0][8:0],
 	
 	// VGA output signals
-	(* chip_pin = "H10, H8, J12, G10, F12, D10, E11, E12" *) output logic [7:0] vga_r,
-	(* chip_pin = "C9, F10, B8, C8, H12, F8, G11, G8" *) output logic [7:0] vga_g,
-	(* chip_pin = "D12, D11, C12, A11, B11, C11, A10, B10" *) output logic [7:0] vga_b,
-	(* chip_pin = "A12" *) output logic vga_clk,
-	(* chip_pin = "F11" *) output logic vga_blank_n, // active low
-	(* chip_pin = "C10" *) output logic vga_sync_n, // active low
-	(* chip_pin = "G13" *) output logic vga_hs,
-	(* chip_pin = "C13" *) output logic vga_vs
+	output logic [7:0] vga_r,
+	output logic [7:0] vga_g,
+	output logic [7:0] vga_b,
+	output logic vga_clk,
+	output logic vga_blank_n, // active low
+	output logic vga_sync_n, // active low
+	output logic vga_hs,
+	output logic vga_vs
 );
 	logic pixel_clk;
 	
@@ -78,7 +77,7 @@ module display_controller(
 	
 	game_sync gs(
 		.clk(pixel_clk),
-		.cell_in(num_select),
+		.display_grid(display_grid),
 		.actual_cursor_row(cursor_row),
 		.actual_cursor_col(cursor_col),
 		.write_pos(write_pixel),

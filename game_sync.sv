@@ -3,7 +3,7 @@ module game_sync(
 	input logic clk,
 	input logic [3:0] actual_cursor_row, // temp
 	input logic [3:0] actual_cursor_col, // temp
-	input logic [3:0] cell_in,		// temp
+	input logic [3:0] display_grid [8:0][8:0],
 	output position write_pos,
 	output logic [2:0] write_data
 );
@@ -56,7 +56,7 @@ module game_sync(
 	board_sync board_scanner(
 		.clk(clk),
 		.current_state(current_state),
-		.cell_in(cell_in), 
+		.display_grid(display_grid), 
 		.start_cell(start_cell),
 		.cell_row(cell_row),
 		.cell_col(cell_col),
